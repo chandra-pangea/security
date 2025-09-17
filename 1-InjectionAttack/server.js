@@ -71,8 +71,6 @@ app.post('/api/posts', (req, res) => {
     isPrivate: false
   }
   
-  console.log(req.body);
-  
   const id = Math.round(Math.random()*1000);
   const query = `INSERT INTO blog_posts (id, title, content) VALUES (${id}, '${req.body.title}', '${req.body.content}')`;
 

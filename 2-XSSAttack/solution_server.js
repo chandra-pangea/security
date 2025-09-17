@@ -5,10 +5,7 @@ const path = require('path');
 const app = express();
 
 // Use security libraries
-const DOMPurify = require('dompurify');
-const { JSDOM } = require('jsdom');
-const window = new JSDOM('').window;
-const purify = DOMPurify(window);
+
 const helmet = require('helmet');
 const escape = require('escape-html');
 

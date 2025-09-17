@@ -4,8 +4,10 @@ const csrf = require('csurf');  // Use express-csrf instead of csurf
 const session = require('express-session');
 const cors = require('cors');
 const app = express();
+//res.cookie("session", sessionId, { httpOnly: true, sameSite: "Strict", secure: true });
 
-const allowedOrigins = ['http://localhost:3000'];
+
+const allowedOrigins = ['http://localhost:3002'];
 
 app.use(cors({
   origin: function (origin, callback) {
